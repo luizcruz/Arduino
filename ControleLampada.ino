@@ -11,7 +11,7 @@
 int trigPin = 5;
 int echoPin = 6;
 int relePin = 9;
-bool estado = false;
+bool state = false;
 
 // Variaveis para calculo da distancia
 long duration, inches, x;
@@ -45,23 +45,23 @@ void loop(){
     
     //Distancia menor que 30 cm, verifica estado
     
-    if (estado == 0){
+    if (state == 0){
         //Desliga lampada
         digitalWrite(relePin, HIGH);
-        Serial.print(estado);
-        estado = true;
+        Serial.print(state);
+        state = true;
     }
     else{
         // Liga a lampada
         digitalWrite(relePin, LOW); 
-        Serial.print(estado);
-        estado = false;       
+        Serial.print(state);
+        state = false;       
     }
      
   }
   
   // Imprime no console a distancia (conferir ativacao do sensor ultrasom)
-  Serial.print("Distancia = ");
+  Serial.print("\nDistancia = ");
   Serial.print(x);
   Serial.print(" cm ");
   Serial.println();
